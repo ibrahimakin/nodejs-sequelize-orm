@@ -1,5 +1,6 @@
 // https://www.youtube.com/watch?v=bOHysWYMZM0&ab_channel=TraversyMedia
 // https://www.youtube.com/watch?v=pxo7L5nd1gA&ab_channel=CoderOne (this)
+// https://youtu.be/pxo7L5nd1gA?t=1415
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -23,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//DB connection
+require("./src/database/connection");
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
